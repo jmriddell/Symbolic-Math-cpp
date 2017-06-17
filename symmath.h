@@ -1,7 +1,6 @@
 #ifndef SYMMATH_H
 #define SYMMATH_H
 #define UNEVAL_ERROR 55
-
 class expression
 {
 public:
@@ -16,9 +15,9 @@ class realconst: public expression
 {
 public:
     realconst(double init);
-    virtual double evaluate();
-    virtual expression reduce();
-    virtual bool evaluable();
+    double evaluate();
+    expression reduce();
+    bool evaluable();
     const double value;
 };
 
@@ -26,7 +25,7 @@ class fraction: public expression
 {
 public:
     fraction(expression &numerator,expression &denominator);
-    virtual double evaluate();
+    double evaluate();
 };
 
 /*class power: public expression

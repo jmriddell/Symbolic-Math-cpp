@@ -25,10 +25,7 @@
 		</Compiler>
 		<Unit filename="main.cpp" />
 		<Unit filename="symmath.cpp" />
-		<Unit filename="symmath.h">
-			<Option compile="1" />
-			<Option link="1" />
-		</Unit>
+		<Unit filename="symmath.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

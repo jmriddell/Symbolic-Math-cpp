@@ -1,6 +1,11 @@
 #include "symmath.h"
 #include <cmath>
 
+double expression::evaluate()
+{
+    throw UNEVAL_ERROR;
+}
+
 bool expression::evaluable()
 {
     if(this->subexpramm > 0)
@@ -68,7 +73,7 @@ double fraction::evaluate()
 {
     if(this->subexpr[0]->evaluable() && this->subexpr[1]->evaluable())
     {
-        return this->subexpr[0]->evaluable()/this->subexpr[1]->evaluable();
+        return this->subexpr[0]->evaluate()/this->subexpr[1]->evaluate();
     }
     else
         throw UNEVAL_ERROR;

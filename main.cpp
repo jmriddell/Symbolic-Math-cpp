@@ -4,8 +4,8 @@ using namespace std;
 
 int main()
 {
-    realconst asdf(88);
-    //asdf = new fraction(*new realconst(8),*new realconst(4));
-    cout << "Hello world!" << endl;
+    //realconst asdf(88);
+    expression &asdf = *new fraction(*new realconst(8),*new realconst(4));
+    cout << asdf.evaluate() << endl;
     return 0;
 }
