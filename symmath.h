@@ -1,9 +1,11 @@
 #ifndef SYMMATH_H
 #define SYMMATH_H
 #define UNEVAL_ERROR 55
+
 class expression
 {
 public:
+    ~expression();
     virtual double evaluate();
     virtual expression reduce();
     virtual bool evaluable();

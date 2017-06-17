@@ -1,13 +1,13 @@
 # depslib dependency file v1.0
-1497713990 source:c:\users\juan\documents\code blocks\symbolic math\main.cpp
+1497715735 source:c:\users\juan\documents\code blocks\symbolic math\main.cpp
 	<iostream>
 	"symmath.h"
 
-1497712953 c:\users\juan\documents\code blocks\symbolic math\symmath.h
+1497728483 c:\users\juan\documents\code blocks\symbolic math\symmath.h
 
 1497712953 source:c:\users\juan\documents\code blocks\symbolic math\symmath.h
 
-1497713172 source:c:\users\juan\documents\code blocks\symbolic math\symmath.cpp
+1497715735 source:c:\users\juan\documents\code blocks\symbolic math\symmath.cpp
 	"symmath.h"
 	<cmath>
 

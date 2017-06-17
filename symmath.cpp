@@ -1,11 +1,16 @@
 #include "symmath.h"
 #include <cmath>
 
+
+expression::~expression()
+{
+    for(int i=0; i < this->subexpramm; i++)
+        delete subexpr[i];
+}
 double expression::evaluate()
 {
     throw UNEVAL_ERROR;
 }
-
 bool expression::evaluable()
 {
     if(this->subexpramm > 0)
@@ -23,24 +28,24 @@ expression expression::reduce()
     for(int i=0; i < this->subexpramm; i++)
     {
         subexpr[i]->reduce();
-        if(subexpr[i]->evaluate() == floor(subexpr[i]->evaluate()))
+        /*if(subexpr[i]->evaluate() == floor(subexpr[i]->evaluate()))
         {
             expression &temp = *new realconst(subexpr[i]->evaluate());
             //delete subexpr[i];
             subexpr[i] = &temp;
-        }
+        }*/
     }
-
-    /*if(this->evaluate() == floor(this->evaluate()))
+    if(this->evaluate() == floor(this->evaluate()))
     {
-        //expression &temp = *new realconst(this->evaluate());
-        //delete this;
+        expression &temp = *new realconst(this->evaluate());
+        delete this;
         //this = temp;
         return temp;
     }
-    else*/
-    return (*this);
+    else
+        return (*this);
 }
+
 
 
 
@@ -48,7 +53,6 @@ realconst::realconst(double init) :value(init)
 {
     return;
 }
-
 bool realconst::evaluable()
 {
     return true;
@@ -61,6 +65,8 @@ expression realconst::reduce()
 {
     return (*this);
 }
+
+
 
 fraction::fraction(expression &numerator,expression &denominator)
 {
